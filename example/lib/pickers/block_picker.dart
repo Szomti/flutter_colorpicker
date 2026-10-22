@@ -72,7 +72,7 @@ class _BlockColorPickerExampleState extends State<BlockColorPickerExample> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(_borderRadius),
         color: color,
-        boxShadow: [BoxShadow(color: color.withOpacity(0.8), offset: const Offset(1, 2), blurRadius: _blurRadius)],
+        boxShadow: [BoxShadow(color: color.withValues(alpha: 0.8), offset: const Offset(1, 2), blurRadius: _blurRadius)],
       ),
       child: Material(
         color: Colors.transparent,
@@ -134,7 +134,7 @@ Widget pickerLayoutBuilder(BuildContext context, List<Color> colors, PickerItem 
             child: Icon(Icons.code, color: useWhiteForeground(widget.pickerColor) ? Colors.white : Colors.black),
             style: ElevatedButton.styleFrom(
               backgroundColor: widget.pickerColor,
-              shadowColor: widget.pickerColor.withOpacity(1),
+              shadowColor: widget.pickerColor.withValues(alpha: 1),
               elevation: 10,
             ),
           ),
@@ -189,7 +189,7 @@ Widget pickerItemBuilder(Color color, bool isCurrentColor, void Function() chang
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular($_borderRadius),
       color: color,
-      boxShadow: [BoxShadow(color: color.withOpacity(0.8), offset: const Offset(1, 2), blurRadius: $_blurRadius)],
+      boxShadow: [BoxShadow(color: color.withValues(alpha: 0.8), offset: const Offset(1, 2), blurRadius: $_blurRadius)],
     ),
     child: Material(
       color: Colors.transparent,
@@ -219,7 +219,7 @@ Widget pickerItemBuilder(Color color, bool isCurrentColor, void Function() chang
             child: Icon(Icons.code, color: useWhiteForeground(widget.pickerColor) ? Colors.white : Colors.black),
             style: ElevatedButton.styleFrom(
               backgroundColor: widget.pickerColor,
-              shadowColor: widget.pickerColor.withOpacity(1),
+              shadowColor: widget.pickerColor.withValues(alpha: 1),
               elevation: 10,
             ),
           ),
@@ -301,7 +301,7 @@ Widget pickerItemBuilder(Color color, bool isCurrentColor, void Function() chang
               ),
               style: ElevatedButton.styleFrom(
                 backgroundColor: widget.pickerColor,
-                shadowColor: widget.pickerColor.withOpacity(1),
+                shadowColor: widget.pickerColor.withValues(alpha: 1),
                 elevation: 10,
               ),
             ),
@@ -334,7 +334,7 @@ BlockPicker(
               child: Icon(Icons.code, color: useWhiteForeground(widget.pickerColor) ? Colors.white : Colors.black),
               style: ElevatedButton.styleFrom(
                 backgroundColor: widget.pickerColor,
-                shadowColor: widget.pickerColor.withOpacity(1),
+                shadowColor: widget.pickerColor.withValues(alpha: 1),
                 elevation: 10,
               ),
             ),
@@ -371,7 +371,7 @@ BlockPicker(
               ),
               style: ElevatedButton.styleFrom(
                 backgroundColor: widget.pickerColor,
-                shadowColor: widget.pickerColor.withOpacity(1),
+                shadowColor: widget.pickerColor.withValues(alpha: 1),
                 elevation: 10,
               ),
             ),
@@ -403,7 +403,7 @@ MultipleChoiceBlockPicker(
               child: Icon(Icons.code, color: useWhiteForeground(widget.pickerColor) ? Colors.white : Colors.black),
               style: ElevatedButton.styleFrom(
                 backgroundColor: widget.pickerColor,
-                shadowColor: widget.pickerColor.withOpacity(1),
+                shadowColor: widget.pickerColor.withValues(alpha: 1),
                 elevation: 10,
               ),
             ),

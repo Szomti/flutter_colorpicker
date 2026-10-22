@@ -197,15 +197,13 @@ class _ColorPickerState extends State<ColorPicker> {
     if (widget.hexInputController == null) return;
     // If a user is inserting/typing any text — try to get the color value from it,
     // and interpret its transparency, dependent on the widget's settings.
-    final Color? color = colorFromHex(widget.hexInputController!.text, enableAlpha: widget.enableAlpha);
+    final Color color = colorFromHex(widget.hexInputController!.text, enableAlpha: widget.enableAlpha);
     // If it's the valid color:
-    if (color != null) {
-      // set it as the current color and
-      setState(() => currentHsvColor = HSVColor.fromColor(color));
-      // notify with a callback.
-      widget.onColorChanged(color);
-      if (widget.onHsvColorChanged != null) widget.onHsvColorChanged!(currentHsvColor);
-    }
+    // set it as the current color and
+    setState(() => currentHsvColor = HSVColor.fromColor(color));
+    // notify with a callback.
+    widget.onColorChanged(color);
+    if (widget.onHsvColorChanged != null) widget.onHsvColorChanged!(currentHsvColor);
   }
 
   @override
@@ -552,10 +550,10 @@ class _SlidePickerState extends State<SlidePicker> {
     if (widget.colorModel == ColorModel.rgb) {
       final Color color = currentHsvColor.toColor();
       return [
-        color.red.toString(),
-        color.green.toString(),
-        color.blue.toString(),
-        '${(color.opacity * 100).round()}',
+        (color.r * 255.0).round().clamp(0, 255).toString(),
+        (color.g * 255.0).round().clamp(0, 255).toString(),
+        (color.b * 255.0).round().clamp(0, 255).toString(),
+        '${(color.a * 100).round()}',
       ][pos];
     } else if (widget.colorModel == ColorModel.hsv) {
       return [
