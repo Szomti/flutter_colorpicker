@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
 const List<Color> colors = [
@@ -343,9 +343,7 @@ BlockPicker(
         const SizedBox(height: 20),
         const Divider(),
         const SizedBox(height: 20),
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
+        Column(
           children: [
             ElevatedButton(
               onPressed: () {
@@ -377,7 +375,6 @@ BlockPicker(
                 elevation: 10,
               ),
             ),
-            const SizedBox(width: 20),
             ElevatedButton(
               onPressed: () {
                 showDialog(

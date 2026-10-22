@@ -10,11 +10,14 @@ dependencies:
   flutter_colorpicker:
     path: ../
 
+  material_ui: any
+  cupertino_ui: any
+
 dev_dependencies:
   flutter_lints: ^1.0.0
 
 flutter:
   uses-material-design: true
 
-environment:                                                            
-  sdk: ">=2.12.0 <3.0.0"
+environment:
+  sdk: ">=2.12.0 <4.0.0"
